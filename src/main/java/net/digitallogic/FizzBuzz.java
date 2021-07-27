@@ -1,10 +1,5 @@
 package net.digitallogic;
 
-
-import java.util.function.Supplier;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
 /**
  * Write a function that will return a String array containing the values from 1 to n except for,
  * 1. each number that is divisible by 3 store "fizz"
