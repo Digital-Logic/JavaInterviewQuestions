@@ -3,7 +3,6 @@ package net.digitallogic;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -56,10 +55,10 @@ public class Anagrams {
 	}
 
 	private static Map<String, Integer> strToMap(String str) {
-		Pattern p = Pattern.compile("\\w");
 
-		return Arrays.stream(str.toLowerCase().split(""))
-			.filter(p.asPredicate())
+		return Arrays.stream(str.toLowerCase()
+				.replaceAll("\\W", "").split("")
+			)
 			.collect(Collectors.toMap(s -> s, c -> 1, Integer::sum));
 	}
 
