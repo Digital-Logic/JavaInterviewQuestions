@@ -31,6 +31,7 @@ public class ReverseString {
 
 		// inplace reverse
 		for (int f=0, b=result.length-1; f < b; ++f, --b) {
+			// swap characters
 			char temp = result[f];
 			result[f] = result[b];
 			result[b] = temp;

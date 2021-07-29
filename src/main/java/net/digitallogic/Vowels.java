@@ -17,12 +17,12 @@ import java.util.regex.Pattern;
 public class Vowels {
 
 	public static int countVowels(String str) {
-		Set<String> vowels = new HashSet<>(List.of("a","e","i","o","u"));
+		Set<Character> vowels = new HashSet<>(Set.of('a','e', 'i','o','u'));
 
 		int count=0;
 
 		for (char c:str.toLowerCase().toCharArray())
-			if (vowels.contains(String.valueOf(c)))
+			if (vowels.contains(c))
 				count++;
 
 		return count;
