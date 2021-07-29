@@ -2,6 +2,7 @@ package net.digitallogic;
 
 import java.util.*;
 import java.util.stream.Collector;
+import java.util.stream.Stream;
 
 /**
  * Write a function that will return the provided string
@@ -25,16 +26,28 @@ public class ReverseString {
 		return result;
 	}
 
+	public static String charArray(String str) {
+		char[] result = str.toCharArray();
+
+		// inplace reverse
+		for (int f=0, b=result.length-1; f < b; ++f, --b) {
+			char temp = result[f];
+			result[f] = result[b];
+			result[b] = temp;
+		}
+
+		return String.valueOf(result);
+	}
+
 	public static String stringArray(String str) {
 		String[] result = new String[str.length()];
-
 		for (int f=0, b=str.length()-1; f < result.length; ++f, --b)
 			result[f] = String.valueOf(str.charAt(b));
 
 		return String.join("", result);
 	}
 
-	public static String StringList(String str) {
+	public static String stringList(String str) {
 		List<String> result = Arrays.asList(str.split(""));
 		Collections.reverse(result);
 		return String.join("", result);
@@ -64,7 +77,6 @@ public class ReverseString {
 		return String.join("", result);
 	}
 
-	// Slow solution, similar to stringAppend solution
 	// Performs string concatenation within a loop, in this case
 	// the loop is the reduce function.
 	public static String streamAppend(String str) {
@@ -72,7 +84,7 @@ public class ReverseString {
 			.reduce("", (s,c) -> c + s);
 	}
 
-	public static String streamOne(String str) {
+	public static String streamLinked(String str) {
 		return String.join("", Arrays.stream(str.split(""))
 			.collect(LinkedList<String>::new,
 				LinkedList<String>::offerFirst,
@@ -80,7 +92,7 @@ public class ReverseString {
 			));
 	}
 
-	public static String streamTwo(String str) {
+	public static String streamStack(String str) {
 		return Arrays.stream(str.split(""))
 			.collect(
 				Collector.of(

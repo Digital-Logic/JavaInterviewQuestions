@@ -32,7 +32,7 @@ public class Capitalize {
 		return joiner.toString();
 	}
 
-	public static String stream(String str) {
+	public static String streams(String str) {
 		return Arrays.stream(str.split(" "))
 			.map(word -> word.substring(0,1).toUpperCase() + word.substring(1))
 			.collect(Collectors.joining(" "));

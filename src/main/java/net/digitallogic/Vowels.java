@@ -1,6 +1,8 @@
 package net.digitallogic;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -15,12 +17,12 @@ import java.util.regex.Pattern;
 public class Vowels {
 
 	public static int countVowels(String str) {
-		Set<String> vowels = Set.of("a","e","i","o","u");
+		Set<String> vowels = new HashSet<>(List.of("a","e","i","o","u"));
 
 		int count=0;
 
-		for (char c:str.toCharArray())
-			if (vowels.contains(String.valueOf(c).toLowerCase()))
+		for (char c:str.toLowerCase().toCharArray())
+			if (vowels.contains(String.valueOf(c)))
 				count++;
 
 		return count;
@@ -42,7 +44,7 @@ public class Vowels {
 
 	// Use a set as the predicate
 	public static int streamVowelsSet(String str) {
-		Set<String> vowels = Set.of("a","e","i","o","u");
+		Set<String> vowels = new HashSet<>(Set.of("a","e","i","o","u"));
 
 		return (int) Arrays.stream(str.split(""))
 			.map(String::toLowerCase)
