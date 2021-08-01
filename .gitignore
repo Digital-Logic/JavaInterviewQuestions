@@ -12,5 +12,5 @@ gradle-app.setting
 .gradletasknamecache
 
 # IDE
-**/.idea
-**/.metadata
+.idea/
+.metadata/
