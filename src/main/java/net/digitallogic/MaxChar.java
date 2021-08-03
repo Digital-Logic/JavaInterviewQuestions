@@ -22,6 +22,25 @@ import java.util.stream.Collectors;
  */
 public class MaxChar {
 
+	public static char intArray(String str) {
+		int[] charMap = new int[26];
+
+		Matcher matcher = Pattern.compile("\\w").matcher(str.toLowerCase());
+
+		while (matcher.find()) {
+			char c = matcher.group().charAt(0);
+			charMap[c - 'a']++;
+		}
+
+		int max=0;
+		for (int i=1; i<charMap.length; ++i) {
+			if (charMap[i] > charMap[max])
+				max = i;
+		}
+
+		return (char)(max + 'a');
+	}
+
 	public static String getMaxChar(String str) {
 		Map<String, Integer> charMap = new HashMap<>();
 
@@ -54,27 +73,9 @@ public class MaxChar {
 			.collect(Collectors.toMap(c -> c, c -> 1, Integer::sum))
 			.entrySet()
 			.stream()
+			//.max((a,b) -> a.getValue() - b.getValue())
 			.max(Map.Entry.comparingByValue())
 			.orElseThrow()
 			.getKey();
-	}
-
-	public static char intArray(String str) {
-		int[] charMap = new int[26];
-
-		Matcher matcher = Pattern.compile("\\w").matcher(str.toLowerCase());
-
-		while (matcher.find()) {
-			char c = matcher.group().charAt(0);
-			charMap[c - 'a']++;
-		}
-
-		int max=0;
-		for (int i=1; i<charMap.length; ++i) {
-			if (charMap[i] > charMap[max])
-				max = i;
-		}
-
-		return (char)(max + 'a');
 	}
 }

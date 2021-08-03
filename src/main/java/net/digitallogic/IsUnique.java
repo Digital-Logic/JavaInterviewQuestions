@@ -33,6 +33,19 @@ public class IsUnique {
 		return true;
 	}
 
+	public static boolean intArray(String str) {
+		int[] charMap = new int[26];
+
+		for (char c:str.toLowerCase().toCharArray())
+			charMap[c - 'a']++;
+
+		for (int i:charMap)
+			if (i > 1)
+				return false;
+
+		return true;
+	}
+
 	public static boolean hashMap(String str) {
 		Map<String, Integer> charMap = Arrays.stream(str.toLowerCase().split(""))
 			.collect(Collectors.toMap(c -> c, c -> 1, Integer::sum));
