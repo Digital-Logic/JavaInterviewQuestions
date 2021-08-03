@@ -51,4 +51,14 @@ public class Vowels {
 			.filter(vowels::contains)
 			.count();
 	}
+
+	public static int streamVowelsSetTwo(String str) {
+		Set<Character> vowels = new HashSet<>(Set.of('a','e', 'i','o','u'));
+
+		return (int) str.chars()
+			.mapToObj(c -> (char) c)
+			.map(Character::toLowerCase)
+			.filter(vowels::contains)
+			.count();
+	}
 }
