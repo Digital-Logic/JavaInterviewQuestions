@@ -53,9 +53,9 @@ class VowelsTest {
 		return Stream.of(
 			Args.of("Hello World!", 3),
 			Args.of("Apples are red.", 5),
-			Args.of("U are not alone.", 7),
-			Args.of("You so sad.", 4),
-			Args.of("Why", 0)
+			Args.of("U.are-not_alone!", 7),
+			Args.of("YOU>ARE<NOT_ALONE!!!.", 8),
+			Args.of("Why?", 0)
 		);
 	}
 
