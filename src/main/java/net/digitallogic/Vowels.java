@@ -2,9 +2,7 @@ package net.digitallogic;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -29,12 +27,13 @@ public class Vowels {
 	}
 
 	public static int matchVowels(String str) {
-		Matcher matcher = Pattern.compile("[aeiou]", Pattern.CASE_INSENSITIVE).matcher(str);
-
-		return (int) matcher.results().count();
+		return (int) Pattern.compile("[aeiou]", Pattern.CASE_INSENSITIVE)
+			.matcher(str)
+			.results()
+			.count();
 	}
 
-	public static int streamVowels(String str) {
+	public static int splitString(String str) {
 		Pattern pattern = Pattern.compile("[aeiou]", Pattern.CASE_INSENSITIVE);
 
 		return (int) Arrays.stream(str.split(""))
@@ -42,17 +41,7 @@ public class Vowels {
 			.count();
 	}
 
-	// Use a set as the predicate
-	public static int streamVowelsSet(String str) {
-		Set<String> vowels = new HashSet<>(Set.of("a","e","i","o","u"));
-
-		return (int) Arrays.stream(str.split(""))
-			.map(String::toLowerCase)
-			.filter(vowels::contains)
-			.count();
-	}
-
-	public static int streamVowelsSetTwo(String str) {
+	public static int splitSet(String str) {
 		Set<Character> vowels = new HashSet<>(Set.of('a','e', 'i','o','u'));
 
 		return (int) str.chars()

@@ -20,7 +20,7 @@ public class ReverseString {
 	public static String appendString(String str) {
 		String result = "";
 
-		for (char c:str.toCharArray())
+		for (char c : str.toCharArray())
 			result = c + result;
 
 		return result;
@@ -30,7 +30,7 @@ public class ReverseString {
 		char[] result = str.toCharArray();
 
 		// inplace reverse
-		for (int f=0, b=result.length-1; f < b; ++f, --b) {
+		for (int f = 0, b = result.length - 1; f < b; ++f, --b) {
 			// swap characters
 			char temp = result[f];
 			result[f] = result[b];
@@ -42,7 +42,7 @@ public class ReverseString {
 
 	public static String stringArray(String str) {
 		String[] result = new String[str.length()];
-		for (int f=0, b=str.length()-1; f < result.length; ++f, --b)
+		for (int f = 0, b = str.length() - 1; f < result.length; ++f, --b)
 			result[f] = String.valueOf(str.charAt(b));
 
 		return String.join("", result);
@@ -57,7 +57,7 @@ public class ReverseString {
 	public static String stringJoiner(String str) {
 		StringJoiner joiner = new StringJoiner("");
 
-		for (int i=str.length()-1; i>=0; --i)
+		for (int i = str.length() - 1; i >= 0; --i)
 			joiner.add(String.valueOf(str.charAt(i)));
 
 		return joiner.toString();
@@ -72,7 +72,7 @@ public class ReverseString {
 	public static String stack(String str) {
 		Deque<String> result = new ArrayDeque<>();
 
-		for (char c:str.toCharArray())
+		for (char c : str.toCharArray())
 			result.push(String.valueOf(c));
 
 		return String.join("", result);
@@ -81,8 +81,9 @@ public class ReverseString {
 	// Performs string concatenation within a loop, in this case
 	// the loop is the reduce function.
 	public static String streamAppend(String str) {
-		return Arrays.stream(str.split(""))
-			.reduce("", (s,c) -> c + s);
+		return str.chars()
+			.mapToObj(i -> String.valueOf((char) i))
+			.reduce("", (result, c) -> c + result);
 	}
 
 	public static String streamLinked(String str) {
@@ -106,5 +107,13 @@ public class ReverseString {
 					arr -> String.join("", arr)
 				)
 			);
+	}
+
+	public static String streamBuilder(String str) {
+		return str.chars()
+			.collect(StringBuilder::new,
+				(sb, i) -> sb.insert(0, (char) i),
+				(sb1, sb2) -> sb1.insert(0, sb2))
+			.toString();
 	}
 }
