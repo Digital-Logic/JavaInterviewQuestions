@@ -54,10 +54,10 @@ class PalindromeTest {
 			Args.of("hannah!", true),
 			Args.of("dog", false),
 			Args.of("I", true),
-			Args.of("Mom", true),
-			Args.of("Taco cat", true),
-			Args.of("Amore, Roma.", true),
-			Args.of("aa", true),
+			Args.of("Taco-cat", true),
+			Args.of("Amore_, Roma.", true),
+			Args.of(" a11a  ", true),
+			Args.of("d21d", false),
 			Args.of("or", false)
 		);
 	}
