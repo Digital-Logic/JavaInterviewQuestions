@@ -15,7 +15,10 @@ import java.util.regex.Pattern;
 public class Vowels {
 
 	public static int countVowels(String str) {
-		Set<Character> vowels = new HashSet<>(Set.of('a','e', 'i','o','u'));
+		// Set<Character> vowels = new HashSet<>(Set.of('a','e', 'i','o','u'));
+		Set<Character> vowels = new HashSet<>(Set.of(
+			"aeiou".chars().mapToObj(i -> (char) i).toArray(Character[]::new)
+		));
 
 		int count=0;
 
@@ -45,7 +48,7 @@ public class Vowels {
 		Set<Character> vowels = new HashSet<>(Set.of('a','e', 'i','o','u'));
 
 		return (int) str.chars()
-			.mapToObj(c -> (char) c)
+			.mapToObj(i -> (char) i)
 			.map(Character::toLowerCase)
 			.filter(vowels::contains)
 			.count();
