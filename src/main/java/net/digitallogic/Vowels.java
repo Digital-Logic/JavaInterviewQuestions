@@ -22,8 +22,8 @@ public class Vowels {
 
 		int count=0;
 
-		for (char c:str.toLowerCase().toCharArray())
-			if (vowels.contains(c))
+		for (char cur:str.toLowerCase().toCharArray())
+			if (vowels.contains(cur))
 				count++;
 
 		return count;
