@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.function.Function;
+import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -41,39 +42,35 @@ public class MaxChar {
 		return (char)(max + 'a');
 	}
 
-	public static String getMaxChar(String str) {
+	public static String maxCharMap(String str) {
 		Map<String, Integer> charMap = new HashMap<>();
 
-		Pattern pattern = Pattern.compile("(?!_)\\w");
-		Matcher matcher = pattern.matcher(str.toLowerCase());
+		Pattern.compile("(?!_)\\w")
+			.matcher(str.toLowerCase())
+			.results()
+			.forEach(r -> {
+				charMap.put(r.group(), charMap.getOrDefault(r.group(), 0) + 1);
+			});
 
-		while(matcher.find()) {
-			String c = matcher.group();
-			charMap.put(c, charMap.getOrDefault(c, 0) + 1);
-		}
-
-		Iterator<String> it = charMap.keySet().iterator();
-
-		String max = it.next();
-
-		while(it.hasNext()) {
-			String next = it.next();
-			if (charMap.get(next) > charMap.get(max))
-				max = next;
-		}
-
-		return max;
+		return charMap.entrySet()
+			.stream()
+			//.max((a, b) -> a.getValue() - b.getValue())
+			.max(Map.Entry.comparingByValue())
+			.orElseThrow()
+			.getKey();
 	}
 
 	public static String maxCharStream(String str) {
-		Pattern pattern = Pattern.compile("[a-z]");
-
-		return Arrays.stream(str.toLowerCase().split(""))
-			.filter(pattern.asPredicate())
-			.collect(Collectors.toMap(c -> c, c -> 1, Integer::sum))
+		return Pattern.compile("[a-z]")
+			.matcher(str.toLowerCase())
+			.results()
+			.collect(Collectors.toMap(
+				MatchResult::group,
+				r -> 1,
+				Integer::sum
+			))
 			.entrySet()
 			.stream()
-			//.max((a,b) -> a.getValue() - b.getValue())
 			.max(Map.Entry.comparingByValue())
 			.orElseThrow()
 			.getKey();
