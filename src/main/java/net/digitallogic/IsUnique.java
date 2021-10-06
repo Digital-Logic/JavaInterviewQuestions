@@ -7,9 +7,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Write a function that can determine if a String contains only unique characters.
+ * Write a function that can determine if a String contains only unique char;acters.
  * That is a character can only appear once within the string.
- * Ignore capitalization.
+ * Ignore capitalization
  *
  * Examples
  * Input: "hello", Output: false

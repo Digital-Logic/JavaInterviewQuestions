@@ -25,7 +25,7 @@ public class MaxChar {
 	public static char intArray(String str) {
 		int[] charMap = new int[26];
 
-		Matcher matcher = Pattern.compile("\\w").matcher(str.toLowerCase());
+		Matcher matcher = Pattern.compile("[a-z]").matcher(str.toLowerCase());
 
 		while (matcher.find()) {
 			char c = matcher.group().charAt(0);
@@ -44,7 +44,7 @@ public class MaxChar {
 	public static String getMaxChar(String str) {
 		Map<String, Integer> charMap = new HashMap<>();
 
-		Pattern pattern = Pattern.compile("\\w");
+		Pattern pattern = Pattern.compile("(?!_)\\w");
 		Matcher matcher = pattern.matcher(str.toLowerCase());
 
 		while(matcher.find()) {
@@ -66,7 +66,7 @@ public class MaxChar {
 	}
 
 	public static String maxCharStream(String str) {
-		Pattern pattern = Pattern.compile("\\w");
+		Pattern pattern = Pattern.compile("[a-z]");
 
 		return Arrays.stream(str.toLowerCase().split(""))
 			.filter(pattern.asPredicate())
