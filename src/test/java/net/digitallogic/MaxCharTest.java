@@ -76,7 +76,7 @@ class MaxCharTest {
 				'l'
 			),
 			Args.of(
-				"Hello      WORLD",
+				"Hello_____WORLD",
 				'l'
 			),
 			Args.of(

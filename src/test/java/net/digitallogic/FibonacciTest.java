@@ -26,6 +26,7 @@ class FibonacciTest {
 	}
 
 	@TestFactory
+	@SuppressWarnings("unchecked cast")
 	Stream<DynamicNode> dynamicTests() {
 		return Stream.concat(
 			findTestFields()
