@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * Write a function that can determine if a String contains only unique characters.
+ * Write a function that can determine if a String contains only unique char;acters.
  * That is a character can only appear once within the string.
  * Ignore capitalization
  *
@@ -60,7 +60,7 @@ public class IsUnique {
 		int bitMask = 0;
 
 		for (int i=0; i<str.length(); ++i) {
-			int val = Character.toLowerCase(str.charAt(i)) - 'a';
+			int val = str.charAt(i) - 'a';
 
 			if ((bitMask & (1 << val)) != 0)
 				return false;
