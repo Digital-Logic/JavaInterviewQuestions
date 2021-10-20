@@ -52,7 +52,7 @@ class IsUniqueTest {
 	Stream<Args> testCases() {
 		return Stream.of(
 			Args.of("hello", false),
-			Args.of("Denver", false),
+			Args.of("Unique", false),
 			Args.of("car", true),
 			Args.of("Alpha", false)
 		);
