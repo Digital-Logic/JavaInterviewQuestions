@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.DynamicContainer.dynamicContainer;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
@@ -52,7 +51,7 @@ class IsUniqueTest {
 	Stream<Args> testCases() {
 		return Stream.of(
 			Args.of("hello", false),
-			Args.of("Denver", false),
+			Args.of("Unique", false),
 			Args.of("car", true),
 			Args.of("Alpha", false)
 		);
