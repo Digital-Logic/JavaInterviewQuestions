@@ -1,9 +1,11 @@
 package net.digitallogic;
 
 /**
- * Write a function that can determine if a String contains only unique characters.
+ * YouTube: https://youtu.be/u6qaf1IZ9c0
+ *
+ * Write a function that can determine if a String contains only unique char;acters.
  * That is a character can only appear once within the string.
- * Ignore capitalization.
+ * Ignore capitalization
  *
  * Examples
  * Input: "hello", Output: false

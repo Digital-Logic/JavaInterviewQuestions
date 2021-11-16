@@ -7,9 +7,9 @@ package net.digitallogic;
  * Ignore capitalization, and spaces. Punctuation will not be included in the provided strings.
  *
  * Examples
- * "Arc" is an anagram of "Car"
- * "Debit card" is an anagram of "Bad credit"
- * "Astronomer" is an anagram of "Moon starer"
+ *  isAnagram("Arc", "Car") => true
+ *  isAnagram("Debit card", "Bad credit") => true
+ *  isAnagram("Astronomer!", "Moon starer") => true
  */
 public class Anagrams {
 
