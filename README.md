@@ -27,12 +27,13 @@ git clone https://github.com/Digital-Logic/JavaInterviewQuestions
 * FizzBuzz https://youtu.be/OphUM4h_-kE
 * Fibonacci https://youtu.be/WAJaPZEJylA
 * Reverse String https://youtu.be/7E_uRbhMV54
-* Capitalize
-* Vowels 
-* MaxChar
+* Reverse String https://youtu.be/7E_uRbhMV54
+* Capitalize https://youtu.be/b3vxmggh2yc
+* Vowels https://youtu.be/d1r_2dh5EBE
+* MaxChar https://youtu.be/7_EZJcKhoN4
 * Anagrams
 * ArrayChuck
-* isUnique
-* Palindrome
+* isUnique https://youtu.be/u6qaf1IZ9c0
+* Palindrome https://youtu.be/pLT781T1oHE
 * ReverseInt
 * MatrixSpiral
