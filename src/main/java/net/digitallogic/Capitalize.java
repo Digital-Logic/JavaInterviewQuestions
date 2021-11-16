@@ -1,11 +1,12 @@
 package net.digitallogic;
 
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
 /**
+ * YouTube: https://youtu.be/b3vxmggh2yc
+ *
  * Capitalize the first letter in each word in the provided string.
  * Examples
  * Input: "can i help you?", Output: "Can I Help You?"

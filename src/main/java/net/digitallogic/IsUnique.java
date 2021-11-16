@@ -1,12 +1,12 @@
 package net.digitallogic;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
+ * YouTube: https://youtu.be/u6qaf1IZ9c0
+ *
  * Write a function that can determine if a String contains only unique char;acters.
  * That is a character can only appear once within the string.
  * Ignore capitalization

@@ -2,9 +2,10 @@ package net.digitallogic;
 
 import java.util.*;
 import java.util.stream.Collector;
-import java.util.stream.Stream;
 
 /**
+ * YouTube: String https://youtu.be/7E_uRbhMV54
+ *
  * Write a function that will return the provided string
  * with the letter in reverse order.
  * Examples
