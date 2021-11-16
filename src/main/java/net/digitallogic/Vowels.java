@@ -1,6 +1,7 @@
 package net.digitallogic;
 
 /**
+ * YouTube: https://youtu.be/d1r_2dh5EBE
  * Write a function that returns the number of vowels in a string.
  * Vowels are the characters a,e,i,o,u.
  * Examples

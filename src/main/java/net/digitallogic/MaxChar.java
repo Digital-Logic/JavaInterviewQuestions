@@ -1,6 +1,8 @@
 package net.digitallogic;
 
 /**
+ * YouTube: https://youtu.be/7_EZJcKhoN4
+ *
  * Write a function that will return the character in the provided string that
  * repeats the most.
  * Make sure to ignore capitalization, punctuation, and spaces.
