@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.DynamicContainer.dynamicContainer;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
@@ -54,11 +53,10 @@ class AnagramsTest {
 		return Stream.of(
 			Args.of("Arc", "Car", true),
 			Args.of("Bat", "Rat", false),
-			Args.of("Debit card","Bad credit", true),
+			Args.of("D e b i t card","B a d credit", true),
 			Args.of("hell", "hel", false),
-			Args.of("Astronomer", "Moon starer", true),
-			Args.of("Conversation", "Voices rant on", true),
-			Args.of("Embezzlement", "blent meze zen", false)
+			Args.of("Dor.mit_ory", "D-irty room!", true),
+			Args.of("Lis_ten!", "Silent?", true)
 		);
 	}
 

@@ -3,28 +3,32 @@ package net.digitallogic;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.MatchResult;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
  * Given two strings, write a function that will determine if one string is
  * an anagram of another. An anagram is a string that is formed by rearranging
  * the letters of another string.
- * Ignore capitalization, and spaces. Punctuation will not be included in the provided strings.
+ * Ignore capitalization, punctuation, and spaces.
  *
  * Examples
  *  isAnagram("Arc", "Car") => true
- *  isAnagram("Debit card", "Bad credit") => true
+ *  isAnagram("D e b i t card", "Bad credit") => true
  *  isAnagram("Astronomer!", "Moon starer") => true
  */
 public class Anagrams {
 
 	public static boolean sorted(String strA, String strB) {
-		char[] charA = strA.toLowerCase()
-			.replace(" ", "")
+		Pattern pattern = Pattern.compile("[^a-z0-9]");
+
+		char[] charA = pattern.matcher(strA.toLowerCase())
+			.replaceAll("")
 			.toCharArray();
 
-		char[] charB = strB.toLowerCase()
-			.replace(" ", "")
+		char[] charB = pattern.matcher(strB.toLowerCase())
+			.replaceAll("")
 			.toCharArray();
 
 		Arrays.sort(charA);
@@ -55,21 +59,23 @@ public class Anagrams {
 	}
 
 	private static Map<String, Integer> strToMap(String str) {
-
-		return Arrays.stream(str.toLowerCase()
-				.replaceAll("\\W", "").split("")
-			)
+		return Pattern.compile("[a-z0-9]")
+			.matcher(str.toLowerCase())
+			.results()
+			.map(MatchResult::group)
 			.collect(Collectors.toMap(s -> s, c -> 1, Integer::sum));
 	}
 
 	public static boolean intArray(String strA, String strB) {
+		Pattern pattern = Pattern.compile("[\\W_]");
+
 		int[] charMap = new int[26];
 
-		String copyA = strA.toLowerCase().replace(" ", "");
+		String copyA = pattern.matcher(strA.toLowerCase()).replaceAll("");
 		for (char c:copyA.toCharArray())
 			charMap[c - 'a']++;
 
-		String copyB = strB.toLowerCase().replace(" ", "");
+		String copyB = pattern.matcher(strB.toLowerCase()).replaceAll("");
 		for (char c:copyB.toCharArray())
 			charMap[c - 'a']--;
 
