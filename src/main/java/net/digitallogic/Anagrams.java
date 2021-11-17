@@ -34,14 +34,7 @@ public class Anagrams {
 		Arrays.sort(charA);
 		Arrays.sort(charB);
 
-		if (charA.length != charB.length)
-			return false;
-
-		for (int i=0; i<charA.length; ++i)
-			if (charA[i] != charB[i])
-				return false;
-
-		return true;
+		return String.valueOf(charA).equals(String.valueOf(charB));
 	}
 
 	public static boolean hashMap(String strA, String strB) {
