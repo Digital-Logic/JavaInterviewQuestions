@@ -1,16 +1,15 @@
 package net.digitallogic;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
+ * YouTube: https://youtu.be/7_EZJcKhoN4
+ *
  * Write a function that will return the character in the provided string that
  * repeats the most.
  * Make sure to ignore capitalization, punctuation, and spaces.
