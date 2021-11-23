@@ -1,8 +1,5 @@
 package net.digitallogic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Write a function that will take an integer and reverse the order of the numbers
  * within that integer.
@@ -26,15 +23,14 @@ public class ReverseInt {
 		int sign = Integer.signum(n);
 		n = Math.abs(n);
 
-		List<Integer> result = new ArrayList<>();
+		int result = 0;
 
 		while (n > 0) {
 			int next = n % 10;
-			result.add(next);
+			result = result * 10 + next;
 			n /= 10;
 		}
 
-		return result.stream()
-			.reduce(0, (t, c) -> t * 10 + c) * sign;
+		return result * sign;
 	}
 }
