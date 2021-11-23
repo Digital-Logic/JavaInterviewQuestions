@@ -55,6 +55,7 @@ class AnagramsTest {
 			Args.of("Bat", "Rat", false),
 			Args.of("D e b i t card","B a d credit", true),
 			Args.of("hell", "hel", false),
+			Args.of("car", "cars", false),
 			Args.of("Dor.mit_ory", "D-irty room!", true),
 			Args.of("Lis_ten!", "Silent?", true)
 		);
