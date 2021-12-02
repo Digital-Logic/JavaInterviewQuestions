@@ -21,7 +21,7 @@ package net.digitallogic;
 public class MatrixSpiral {
 
 	public static int[][] matrixSpiral(int n) {
-		int[][] grid = new int[n][n];
+		final int[][] grid = new int[n][n];
 
 		// Matrix barriers
 		int top=0,
@@ -29,8 +29,8 @@ public class MatrixSpiral {
 			right=n-1,
 			bottom=n-1;
 
-		int index=1,
-			max = n*n;
+		int index=1;
+		final int max = n*n;
 
 		while(index<=max) {
 			// Top Row
