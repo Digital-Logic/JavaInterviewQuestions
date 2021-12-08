@@ -31,9 +31,9 @@ git clone https://github.com/Digital-Logic/JavaInterviewQuestions
 * Capitalize https://youtu.be/b3vxmggh2yc
 * Vowels https://youtu.be/d1r_2dh5EBE
 * MaxChar https://youtu.be/7_EZJcKhoN4
-* Anagrams
+* Anagrams https://youtu.be/FDSWa9Y1AeU
 * ArrayChuck
 * isUnique https://youtu.be/u6qaf1IZ9c0
 * Palindrome https://youtu.be/pLT781T1oHE
-* ReverseInt
-* MatrixSpiral
+* ReverseInt https://youtu.be/9pMCQ8BQ4zs
+* MatrixSpiral https://youtu.be/Od2eeaW3ys0
